@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Raleway:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/** globals **/
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  border: none;
+}
+
+:root {
+  /** colors **/
+  --Very-Dark-Blue: hsl(243, 87%, 12%);
+  --Desaturated-Blue: hsl(238, 22%, 44%);
+
+  --Bright-Blue: hsl(224, 93%, 58%);
+  --Moderate-Cyan: hsl(170, 45%, 43%);
+
+  --Light-Grayish-Blue: hsl(240, 75%, 98%);
+  --Light-Gray: hsl(0, 0%, 75%);
+
+  /** spacing **/
+  --spc-1: 1.875rem;
+  --spc-2: 2.625rem;
+  --spc-4: 3.625rem;
+  --spc-5: 5rem;
+  --spc-6: 5.625rem;
+  --spc-7: 3rem;
+  --spc-8: 2rem;
+
+  --gap-1: 1rem;
+  --gap-2: 0.5rem;
+
+  /** font size **/
+  --heading-1: clamp(1.5rem, calc(1.36rem + 0.6vw), 1.9rem);
+  --heading-2: clamp(1.2rem, calc(1.36rem + 0.6vw), 1.9rem);
+  --heading-3: 1rem;
+  --fs-span: 0.7rem;
+  --paragraph: 0.95rem;
+
+  /** templating **/
+  --txt-color-heading: var(--Very-Dark-Blue);
+  --bkg-btn: var(--Bright-Blue);
+  --bkg-btn-work: var(--Moderate-Cyan);
+  --txt-color-btn: var(--Light-Grayish-Blue);
+  --txt-color-btn-work: var(--Moderate-Cyan);
+  --heading: var(--Very-Dark-Blue);
+}
+
+/** ================= utility class ===================**/
+
+/** typografi **/
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--heading);
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+h2 {
+  color: var(--heading);
+  font-size: 1rem;
+}
+
+h4 {
+  margin: 0;
+  color: var(--heading);
+}
+
+span {
+  font-size: 0.9rem;
+  color: var(--Desaturated-Blue);
+}
+
+a {
+  color: var(--Desaturated-Blue);
+}
+
+p {
+  font-size: 0.9rem;
+  color: var(--heading);
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
+.text-aling {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .text-aling {
+    text-align: start;
+  }
+}
+
+/**  components **/
+
+/** btns **/
+
+.btn-started {
+  padding: 1rem 0;
+  color: var(--txt-color-btn);
+  cursor: pointer;
+  background-color: var(--bkg-btn);
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .btn-started {
+    padding: 1rem 2rem;
+  }
+}
+
+/** input **/
+
+.inp {
+  border: 1px solid var(--Very-Dark-Blue);
+  border-radius: 0.2rem;
+  padding: 1rem 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .inp {
+    padding: 0 1.4rem;
+  }
+}
+
+.inp::placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: var(--Light-Gray);
+}
+
+/** === layout === **/
+
+/** flex **/
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.aling-center {
+  align-items: center;
+}
+
+.space-btw {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/** spacing **/
+
+.gap-1 {
+  gap: var(--gap-1);
+}
+
+.gap-2 {
+  gap: var(--gap-2);
+}
+
+/** container **/
+
+.container {
+  padding: var(--spc-1) var(--spc-1);
+}
+
+.container-2 {
+  padding: 0 var(--spc-8);
+}
+
+/** ================= own styles ===================**/
+
+/** header **/
+
+.logo-container {
+  width: 6rem;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    gap: 3rem;
+  }
+}
+
+ul {
+  font-family: "Raleway", sans-serif;
+}
+
+/** hero **/
+
+.hero {
+  padding-top: calc((var(--spc-4) - var(--spc-2)));
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .illustration-one-container {
+    grid-column: 2 / -1;
+  }
+  .hero-content {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+}
+
+.hero-content {
+  margin-top: var(--spc-6);
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    margin-top: 0;
+  }
+}
+.p-spc {
+  padding: 0 0.688;
+  margin-bottom: var(--spc-7);
+}
+
+@media (min-width: 768px) {
+  .hero-content-bottom {
+    flex-direction: row;
+  }
+}
+
+/** productive **/
+
+.productive {
+  padding-bottom: 5rem;
+  background-image: url("/images/bg-curve-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .productive {
+    padding-top: 11.25rem;
+    margin-top: 11.25rem;
+    grid-template-columns: 60% 40%;
+  }
+  .illustration-two-container {
+    grid-column: 2 / -1;
+  }
+  .productive-content {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+}
+@media (min-width: 768px) {
+  .heading-productive {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+}
+
+.p-productive {
+  color: var(--Desaturated-Blue);
+}
+
+@media (min-width: 768px) {
+  .p-productive {
+    max-width: 530px;
+  }
+}
+
+@media (min-width: 768px) {
+  .see-how {
+    justify-content: flex-start;
+  }
+}
+
+.link {
+  color: var(--Moderate-Cyan);
+  border-bottom: 2px solid var(--Moderate-Cyan);
+  padding-bottom: 0.2rem;
+  margin-bottom: 5rem;
+}
+
+/** comment **/
+
+.container-comment {
+  max-width: 320px;
+  background-color: white;
+  padding: 0.938rem 0.938rem 0.938rem 1.75rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-comment {
+    margin: 0;
+  }
+}
+
+.p-comment {
+  font-size: 0.75rem;
+}
+
+.avatar-container {
+  width: 3rem;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+/** early access **/
+
+.early-access {
+  padding: 2.5rem;
+  background-color: var(--Desaturated-Blue);
+}
+
+@media (min-width: 768px) {
+  .early-access-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+
+.heading-early {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .heading-early {
+    font-size: 2rem;
+  }
+}
+
+.p-early {
+  color: var(--Light-Grayish-Blue);
+  margin-bottom: 1.75rem;
+}
+@media (min-width: 768px) {
+  .p-early {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .early-bottom {
+    width: 50%;
+  }
+}
+
+.inp.inp-early {
+  border: none;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .btn-started.mx-w {
+    max-width: 222px;
+  }
+}
+
+/** footer **/
+
+footer {
+  padding: 3rem;
+  background-color: var(--Very-Dark-Blue);
+}
+
+@media (min-width: 768px) {
+  .info-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 12rem;
+  }
+}
+
+.p-footer {
+  color: white;
+}
+@media (min-width: 768px) {
+  .p-footer {
+    margin-top: 0;
+  }
+}
+
+.navbar-footer {
+  margin-top: 2rem;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .navbar-footer {
+    margin-top: 0;
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+
+.link-footer {
+  color: var(--Light-Grayish-Blue);
+}
